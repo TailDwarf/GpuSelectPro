@@ -23,7 +23,6 @@ public class ThreadTest {
 			QueryThread query = new QueryThread(api, fileList.get(i));
 			Thread thread = new Thread(query);
 			thread.start();
-			
 		}
 	}
 }
