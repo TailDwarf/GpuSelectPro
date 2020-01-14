@@ -18,6 +18,8 @@ public class ThreadTest {
 			fileList.add(sqlList);
 		}
 		SocketUtil.init();
+		
+		
 		for (int i = 0; i < fileNum; i++) {
 			GpuSearchAPI api = new GpuSearchAPI();
 			QueryThread query = new QueryThread(api, fileList.get(i));
