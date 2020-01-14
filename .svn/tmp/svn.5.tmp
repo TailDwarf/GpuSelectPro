@@ -1,0 +1,4 @@
+hostName=192.168.252.154
+port=5510
+timeOut=3000000
+poolNumber=20

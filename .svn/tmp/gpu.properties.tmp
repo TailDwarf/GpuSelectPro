@@ -1,0 +1,9 @@
+hostName=192.168.252.154
+port=5510
+timeOut=3000000
+<<<<<<< .mine
+poolNumber=20||||||| .r1719
+=======
+poolNumber=25
+ftpHost=192.168.2.199
+ftpPort=211>>>>>>> .r2384

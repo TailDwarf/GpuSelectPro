@@ -1,0 +1,11 @@
+insert into temp11 select * from ZNMAT134 limit 1 offset 1 proc
+insert into temp11 select * from ZNMAT134 limit 2 offset 1 proc
+insert into temp11 select * from ZNMAT134 limit 3 offset 1 proc
+insert into temp11 select * from ZNMAT134 limit 4 offset 1 proc
+insert into temp11 select * from ZNMAT134 limit 5 offset 1 proc
+insert into temp11 select * from ZNMAT134 limit 6 offset 1 proc
+insert into temp11 select * from ZNMAT134 limit 7 offset 1 proc
+insert into temp11 select * from ZNMAT134 limit 8 offset 1 proc
+insert into temp11 select * from ZNMAT134 limit 9 offset 1 proc
+insert into temp11 select * from ZNMAT134 limit 10 offset 1 proc
+select count(*) from temp11

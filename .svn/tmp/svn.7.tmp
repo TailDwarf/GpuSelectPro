@@ -1,0 +1,6 @@
+hostName=192.168.2.199
+port=5510
+timeOut=3000000
+poolNumber=25
+ftpHost=192.168.2.199
+ftpPort=211

@@ -1,0 +1,32 @@
+package com.lactec.crmConfiguration.search.test;
+
+import java.util.List;
+
+import com.lactec.crmConfiguration.search.bean.PageBean2;
+import com.lactec.crmConfiguration.search.service.GpuSearchAPI;
+import com.lactec.crmConfiguration.search.util.SocketUtil;
+
+public class Test {
+	public static void main(String[] args) {
+		SocketUtil.init();
+		GpuSearchAPI api = new GpuSearchAPI();
+		String sql = "select count(*) from ZNMAT134";
+		// 查询方法中1，10为分页参数：第1页，每页10条数据
+		// 设置0,0为不分页查询
+		PageBean2 page = api.search(sql, 0, 0);
+		if (page != null) {
+			List<String> list = page.getRows();
+			int i = 0;
+			for (String string : list) {
+				System.out.println(string);
+				i++;
+				// 10为Console窗口中打印的结果集条数
+				if (i > 10) {
+					break;
+				}
+			}
+		}
+
+	}
+
+}

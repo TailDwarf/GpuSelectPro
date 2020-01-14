@@ -1,0 +1,32 @@
+package com.lactec.crmConfiguration.search.thread;
+
+import java.util.List;
+
+import com.lactec.crmConfiguration.search.service.GpuSearchAPI;
+
+public class QueryThread implements Runnable {
+	private GpuSearchAPI api;
+	private List<String> sqlList;
+
+	public QueryThread() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public QueryThread(GpuSearchAPI api, List<String> sqlList) {
+		super();
+		this.api = api;
+		this.sqlList = sqlList;
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		if (api != null && sqlList.size() != 0) {
+			for (String sql : sqlList) {
+				api.search(sql, 0, 0);
+			}
+		}
+	}
+
+}

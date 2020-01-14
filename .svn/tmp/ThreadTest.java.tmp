@@ -1,0 +1,33 @@
+package com.lactec.crmConfiguration.search.test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.lactec.crmConfiguration.search.service.GpuSearchAPI;
+import com.lactec.crmConfiguration.search.thread.QueryThread;
+import com.lactec.crmConfiguration.search.util.FileUtil;
+import com.lactec.crmConfiguration.search.util.SocketUtil;
+
+public class ThreadTest {
+	public static void main(String[] args) throws Exception {
+		// SQL脚本数量(文件数量)
+//       SimpleDateFormat sdf =new SimpleDateFormat("hh:mm:ss");
+//       String s=sdf.format(System.currentTimeMillis());
+//       System.out.println(s);
+		int fileNum = 10;
+		List<List<String>> fileList = new ArrayList<>();
+		for (int i = 0; i < fileNum; i++) {
+			List<String> sqlList = FileUtil.getSqlList("sql_" + i + ".txt");
+			fileList.add(sqlList);
+		}
+		SocketUtil.init();
+		for (int i = 0; i < fileNum; i++) {
+			GpuSearchAPI api = new GpuSearchAPI();
+			QueryThread query = new QueryThread(api, fileList.get(i));
+			Thread thread = new Thread(query);
+			thread.start();
+		}
+		
+	       
+	}
+}
