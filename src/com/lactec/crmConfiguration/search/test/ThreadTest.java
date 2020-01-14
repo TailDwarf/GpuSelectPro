@@ -17,6 +17,7 @@ public class ThreadTest {
 			List<String> sqlList = FileUtil.getSqlList("test_" + i + ".txt");
 			fileList.add(sqlList);
 		}
+		
 		SocketUtil.init();
 		
 		
